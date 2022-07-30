@@ -1,0 +1,23 @@
+/* Importing fonts */
+@import "fonts.css";
+/* Style resetting */
+@import "reset.css";
+/* Importing variables */
+@import "variables.css";
+/* Importing utilities */
+@import "utilities.css";
+
+
+/* Importing component styles */
+@import "./components/welcome-screen.css";
+@import "./components/player-selection-screen.css";
+@import "./components/game-screen.css";
+@import "./components/win-screen.css";
+@import "./components/scoreboard-screen.css";
+@import "./components/base/button.css";
+
+
+
+body {
+    overflow: hidden;
+}
