@@ -43,5 +43,6 @@ scoreboardBtn.addEventListener("click", () => {
     scoreboard.style.display = "none";
     noRecords.style.display = "block";
   }
+  scoreboardScreen.style.display = "block";
   scoreboardScreen.scrollIntoView({ behavior: "smooth" });
 });
