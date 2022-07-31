@@ -19,11 +19,16 @@ export const scoreElements = {
 };
 
 rollButton.addEventListener("click", () => {
+
+  // play the dice rolling soundtrack
   diceSound.currentTime = 0;
   diceSound.play();
+
+  //animate each dice by setting animated class
   diceImgs.forEach((img) => {
     img.classList.add("animated");
   });
+
   setTimeout(() => {
     diceImgs.forEach((img) => {
       img.classList.remove("animated");
@@ -31,6 +36,8 @@ rollButton.addEventListener("click", () => {
     diceSound.pause();
 
     const [dice1, dice2] = getRandomTwoDices();
+
+    //setting the dice images according to resulting dice values
     diceImgs.forEach((img, index) => {
       img.src = `./img/dice_${index === 0 ? dice1 : dice2}.png`;
     });
@@ -53,15 +60,22 @@ rollButton.addEventListener("click", () => {
     }
 
     scoreElements[player].innerHTML = gameState[player].score;
+    // update current layers score in html
 
+    //set the html of turn
     turnEl.innerHTML = `${
       gameState.player1.turn ? gameState.player1.name : gameState.player2.name
     }'s turn`;
 
+
     gameState.round++;
+
+    //setting the round in html
     roundEl.innerHTML = `Round ${gameState.round}`;
 
     if (gameState[player].score >= 100) {
+
+      // if some player wins, set congratulations msg, scores and navigate to win screen to display them
       winnerEl.innerHTML = `<h1>Congratulations <br/> ${gameState[player].name} !</h1>`;
       winnerScore.innerHTML = `Your score <br/> <span> ${gameState[player].score}</span>`;
       loserScore.innerHTML = `${
@@ -75,6 +89,7 @@ rollButton.addEventListener("click", () => {
       // save marks to localStorage
       let scores = localStorage.getItem("scores");
       if (!scores) {
+        // if scores kye is unavailable create it with this score
         localStorage.setItem(
           "scores",
           JSON.stringify([
@@ -85,6 +100,7 @@ rollButton.addEventListener("click", () => {
           ])
         );
       } else {
+        // if already available, push this score to already available scores
         scores = JSON.parse(scores);
         scores.unshift({
           player1: gameState["player1"],

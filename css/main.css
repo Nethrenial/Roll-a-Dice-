@@ -6,14 +6,17 @@
 @import "variables.css";
 /* Importing utilities */
 @import "utilities.css";
+/* Importing animations */
+@import "animations.css";
 
 
 /* Importing component styles */
-@import "./components/welcome-screen.css";
-@import "./components/player-selection-screen.css";
-@import "./components/game-screen.css";
-@import "./components/win-screen.css";
-@import "./components/scoreboard-screen.css";
+@import "./components/screens/welcome-screen.css";
+@import "./components/screens/player-selection-screen.css";
+@import "./components/screens/game-screen.css";
+@import "./components/screens/win-screen.css";
+@import "./components/screens/scoreboard-screen.css";
+
 @import "./components/base/button.css";
 
 

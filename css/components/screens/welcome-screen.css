@@ -163,6 +163,18 @@
   }
 }
 
+.welcome-screen__images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.welcome-screen__images img {
+  width: 100px;
+  animation: shake2 2s linear infinite;
+}
+
 .welcome-screen__buttons {
   display: flex;
   /* flex-direction: column; */

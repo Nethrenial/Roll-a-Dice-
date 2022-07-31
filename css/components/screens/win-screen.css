@@ -64,15 +64,3 @@ margin-top: 8rem;
   justify-content: center;
   gap: 3rem;
 }
-
-@keyframes bounceScale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}

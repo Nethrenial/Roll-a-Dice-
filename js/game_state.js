@@ -10,6 +10,5 @@ export const gameState = {
         score: 0,
         turn: false,
     },
-
     round: 1,
 }

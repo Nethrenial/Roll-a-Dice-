@@ -24,6 +24,7 @@ scoreboardBtn.addEventListener("click", () => {
   //get scores
   let scores = localStorage.getItem("scores");
   if (scores) {
+    // if scores are already available, parse them as an array and populate scoreboard with them
     scoreboardTitle.style.display = "block";
     scoreboard.style.display = "flex";
     noRecords.style.display = "none";
@@ -39,10 +40,11 @@ scoreboardBtn.addEventListener("click", () => {
       scoreboard.appendChild(scoreEl);
     });
   } else {
+    // else display No previous game records message
     scoreboardTitle.style.display = "none";
     scoreboard.style.display = "none";
     noRecords.style.display = "block";
   }
   scoreboardScreen.style.display = "block";
-  scoreboardScreen.scrollIntoView({ behavior: "smooth" });
+  scoreboardScreen.scrollIntoView();
 });
